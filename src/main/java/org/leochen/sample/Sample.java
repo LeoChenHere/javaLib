@@ -2,23 +2,68 @@ package org.leochen.sample;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Properties;
+
+import static org.leochen.utils.Util.*;
 
 @Slf4j
 public class Sample {
 
     public static void main(String[] args) {
-        test1(true);
-        test2(true);
-        test3(true);
+        test0(false);
+        test1(false);
+        test2(false);
+        test3(false);
+        test4(false);
+        test5(false);
+        test6(false);
+        test7(false);
+        test8(true);
+    }
+
+    private static void test0(boolean runCheck){
+        if(!runCheck){return;}
+        log.info("测试: 綜合");
+    }
+
+    private static void test8(boolean runCheck){
+        if(!runCheck){return;}
+        log.info("测试: 讀取 resources 下的 properties");
+
+        Properties prop = loadProperties("app.properties");
+        prop.forEach((key, value) -> {
+            log.info( "{} = {}" , key , value);
+        });
+    }
+
+    private static void test7(boolean runCheck){
+        if(!runCheck){return;}
+        log.info("测试: Class 所在位置 & 執行目錄(user.dir)");
+
+        log.info("getClassLocation: {}", getClassLocation());
+        log.info("user.dir: {}", System.getProperty("user.dir"));
+    }
+
+    private static void test6(boolean runCheck){
+        if(!runCheck){return;}
+        log.info("测试: 排序存在數字的 String 內容List");
+
+        List<String> places = Arrays.asList("123", "234", "12", "John", "88");
+        log.info("sortInt: {}", sortStringList(places));
+    }
+
+    private static void test5(boolean runCheck){
+        if(!runCheck){return;}
+        log.info("测试: 文字轉數字");
+
+        log.info("This text is number or not: {}", canBeNumber("Hello"));
+        log.info("now process ID: {}", getPID());
     }
 
     private static void test1(boolean runCheck){
@@ -32,37 +77,18 @@ public class Sample {
         log.info("测试: 检查目录");
 
         String folderPath = "./db";
-        String fileNamePattern = "*.sqlite";
-        File file = new File(folderPath);
-        if (file.isDirectory()) {
-            log.info("{} 目錄存在", folderPath);
-            _test2_1(runCheck, folderPath, fileNamePattern);
-        }else{
-            log.info("{} 目錄不存在，建立目錄", folderPath);
-            file.mkdir();
-        }
-    }
-
-
-    private static void _test2_1(boolean runCheck, String folderPath, String fileNamePattern){
-        if(!runCheck){return;}
-        log.info("测试: 列出內容");
-
-        log.info("列出指定目錄下副檔名({})的檔案: ", fileNamePattern);
-        Path path = Path.of(folderPath);
-        try(DirectoryStream<Path> stream = Files.newDirectoryStream(path, fileNamePattern)){
-            for (Path entry: stream){
-                log.info("" + entry.getFileName());
-            }
-        }
-        catch (IOException e){
-            log.error("error while retrieving update configuration files " + e.getMessage());
-        }
+        makeFolderExist(folderPath);
     }
 
     private static void test3(boolean runCheck){
         if(!runCheck){return;}
+        log.info("测试: 列出內容");
 
+        listFiles(System.getProperty("user.dir"));
+    }
+
+    private static void test4(boolean runCheck){
+        if(!runCheck){return;}
         log.info("测试 sqlite");
 
         Connection connection = null;
