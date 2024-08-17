@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
@@ -22,9 +23,9 @@ public class Sample {
         test3(false);
         test4(false);
         test5(false);
-        test6(false);
+        test6(true);
         test7(false);
-        test8(true);
+        test8(false);
     }
 
     private static void test0(boolean runCheck){
@@ -54,7 +55,19 @@ public class Sample {
         if(!runCheck){return;}
         log.info("测试: 排序存在數字的 String 內容List");
 
+        /* WARNING!
+        no matter "List.of" or "Arrays.asList" you can not change the length (add) of the List,
+        -> "List.of" will get an immutable list
+        -> "Arrays.asList" allow you set value to change element.
+        List<String> places = List.of("123", "234", "12", "John", "88");
         List<String> places = Arrays.asList("123", "234", "12", "John", "88");
+        places.add("9"); // will catch a UnsupportedOperationException no matter which one.
+        places.set(3, "9"); // will catch a UnsupportedOperationException with List.of.
+        Recommend this: for one line announce & init
+        List<String> places = new ArrayList<>(List.of("123", "234", "12", "John", "88"));
+        */
+        List<String> places = new ArrayList<>(List.of("123", "234", "12", "John", "88"));
+        places.add("9");
         log.info("sortInt: {}", sortStringList(places));
     }
 
