@@ -3,7 +3,7 @@
 
 # Setup for building
 1. create file: gradle.properties @ project root
-```groovy
+```text
 repoUrl: [URL]
 servicelibPath: /repository/[PATH]
 mavenCentralPath: /repository/maven-public/
