@@ -12,6 +12,8 @@ repoPassword: [dev password]
 ```
 
 # 說明
+0. sample:
+  - 專門放一些使用/測試案例的
 1. entity: 
   - 放數據庫物件基本欄位的代碼配置
 2. input: 

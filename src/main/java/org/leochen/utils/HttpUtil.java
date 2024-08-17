@@ -1,7 +1,7 @@
 package org.leochen.utils;
 
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.event.KeyValuePair;
+import org.apache.logging.log4j.core.util.KeyValuePair;
 
 import java.io.BufferedReader;
 import java.io.IOException;
