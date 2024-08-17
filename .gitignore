@@ -10,4 +10,5 @@
 # source
 !src
 !libs
-!lib 
+!lib
+!*.md
