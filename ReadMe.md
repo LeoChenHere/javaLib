@@ -5,8 +5,8 @@
 1. create file: gradle.properties @ project root
 ```text
 repoUrl: [URL]
-servicelibPath: /repository/[PATH]
-mavenCentralPath: /repository/maven-public/
+engineeringPath: /repository/[PATH]
+mavenPublicPath: /repository/maven-public/
 repoUser: [dev account]
 repoPassword: [dev password]
 ```
