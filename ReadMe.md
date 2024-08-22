@@ -29,8 +29,8 @@ repoPassword: [dev password]
 **整理 GitHub內所有Library 類的項目**
 * 建立一個項目，專門講述目前工程規劃與進展的說明項目
 * Java library : 歸到 Utility
-  * JavaLibrary
-  *javaLIB
+  * [v] JavaLibrary
+  * [v] javaLIB (後續長期看下有沒有一些好用的功能可以搬遷進來)
 * Spring / Web / Service : 歸到 ServiceLib
   * ServiceFramework
   * webserviceFW
