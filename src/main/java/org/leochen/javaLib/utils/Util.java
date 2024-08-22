@@ -62,6 +62,10 @@ public class Util {
         return Util.class.getResource("/").getPath().replaceAll("classes/", "").replaceAll("%20", "\\ ");
     }
 
+    public static Properties loadAppProperties(){
+        return loadProperties("app.properties");
+    }
+
     public static Properties loadProperties(String fileName){
         Properties prop = new Properties();
         try{
