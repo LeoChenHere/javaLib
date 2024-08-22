@@ -1,4 +1,4 @@
-package org.leochen.sample;
+package org.leochen.javaLib.sample;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -7,11 +7,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
-import static org.leochen.utils.Util.*;
+import static org.leochen.javaLib.utils.Util.*;
 
 @Slf4j
 public class Sample {

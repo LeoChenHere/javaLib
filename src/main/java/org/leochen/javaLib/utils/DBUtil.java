@@ -1,4 +1,4 @@
-package org.leochen.utils;
+package org.leochen.javaLib.utils;
 
 public class DBUtil {
     public static final String ACTIVE = "active";

@@ -1,4 +1,4 @@
-package org.leochen.statics;
+package org.leochen.javaLib.statics;
 
 public class Status {
     public static final String ACTIVE = "active";

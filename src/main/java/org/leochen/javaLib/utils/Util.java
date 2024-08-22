@@ -1,7 +1,7 @@
-package org.leochen.utils;
+package org.leochen.javaLib.utils;
 
 import lombok.extern.slf4j.Slf4j;
-import org.leochen.sample.Sample;
+import org.leochen.javaLib.sample.Sample;
 
 import java.io.File;
 import java.io.FileNotFoundException;

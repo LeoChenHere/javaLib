@@ -1,4 +1,4 @@
-package org.leochen.result;
+package org.leochen.javaLib.result;
 
 public interface IResultCode {
     int getCode();

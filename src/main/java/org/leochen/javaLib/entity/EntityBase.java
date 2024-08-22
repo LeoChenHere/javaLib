@@ -1,4 +1,4 @@
-package org.leochen.entity;
+package org.leochen.javaLib.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -12,7 +12,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
-import static org.leochen.utils.DBUtil.ACTIVE;
+import static org.leochen.javaLib.utils.DBUtil.ACTIVE;
 
 @Data
 @MappedSuperclass

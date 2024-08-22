@@ -1,4 +1,4 @@
-package org.leochen.input;
+package org.leochen.javaLib.input;
 
 import lombok.Getter;
 
